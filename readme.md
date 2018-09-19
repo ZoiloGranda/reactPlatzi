@@ -1,5 +1,5 @@
 ## Componentes
-Se crean de forma distinta si se usa ES5 o ES6. Los propTypes son validaciones que no son obligatorias. El metodo `render` de cada componente, es el que contiene como tal lo que se va a mostrar en la vista
+Se crean de forma distinta si se usa ES5 o ES6. Los `propTypes` son validaciones que no son obligatorias. El metodo `render` de cada componente, es el que contiene como tal lo que se va a mostrar en la vista
 ```js
 //asi se crea un componente con ES5
 var HelloWorldComponent = React.createClass({
