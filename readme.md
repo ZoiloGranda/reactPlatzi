@@ -33,3 +33,23 @@ componente
 ```js
 React.render(<HelloWorldComponent name="Zoilo"/>, document.getElementById('container'))
 ```
+
+## Componentes anidados
+Para usar un componente dentro de otro, solo hay que incluir el nombre del componente en el `return` del componente padre
+```js
+class PokeAvatar extends React.Component{
+  render(){
+    var url = `http://veekun.com/dex/media/pokemon/main-sprites/x-y/${this.props.number}.png`
+    return <img src={url} className="avatar"/>
+  }
+}
+
+class PokeRow extends React.Component{
+  render() {
+    return <div className="pokerow">
+    <PokeAvatar number={this.props.number}/>
+    {this.props.name}
+    </div>
+  }
+}
+```
