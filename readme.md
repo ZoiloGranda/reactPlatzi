@@ -53,3 +53,30 @@ class PokeRow extends React.Component{
   }
 }
 ```
+
+## Keys
+Cuando un elemento se repite varias veces, las `Keys` ayudan a React a identificar cual elemento se ha modificado, añadido o eliminado. Las `Keys` deben ser unicas entre los elementos hermanos, no necesariamente deben ser unicas globalmente. Deben ser añadidas desde el componente padre que renderiza el elemento repetitivo.
+```js
+class PokeRow extends React.Component{
+  render() {
+    //aqui no se añaden las keys
+    return <li className="pokerow">
+    <PokeAvatar number={this.props.number}/>
+    {this.props.name}
+    </li>
+  }
+}
+
+class PokeTable extends React.Component{
+  render(){
+    return <ul className="poketable">
+    {
+      this.props.pokemons.map((pokemon)=>{
+        //aqui se añaden las keys
+          return <PokeRow key={pokemon.number} name={pokemon.name} number={pokemon.number}/>
+      })
+    }
+    </ul>
+  }
+}
+```
