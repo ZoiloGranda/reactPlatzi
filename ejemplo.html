@@ -8,38 +8,7 @@
   <body>
     <section id="container">
     </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
-    <script type="text/jsx">
-    var pokemons = [
-      {number:1, name:'Bulbasaur'},
-      {number:2, name:'Ivysaur'},
-      {number:3, name:'Venusaur'}
-    ]
-    
-    class PokeRow extends React.Component{
-      render() {
-        return <li className="pokerow">
-        <PokeAvatar number={this.props.number}/>
-        {this.props.name}
-        </li>
-      }
-    }
-    
-    class PokeTable extends React.Component{
-      render(){
-        return <ul className="poketable">
-        {
-          this.props.pokemons.map((pokemon)=>{
-              return <PokeRow key={pokemon.number} name={pokemon.name} number={pokemon.number}/>
-          })
-        }
-        </ul>
-      }
-    }
-    React.render(
-      <PokeTable pokemons={pokemons}/>,
-      document.getElementById('container'))
+    <script type="text/javascript" src="build.js">  
     </script>
   </body>
 </html>

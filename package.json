@@ -1,10 +1,11 @@
 {
   "name": "reactplatzi",
   "version": "1.0.0",
-  "description": "Se crean de forma distinta si se usa ES5 o ES6. Los `propTypes` son validaciones que no son obligatorias. El metodo `render` de cada componente, es el que contiene como tal lo que se va a mostrar en la vista ```js //asi se crea un componente con ES5 var HelloWorldComponent = React.createClass({   propTypes:{     name: React.PropTypes.string,     level: React.PropTypes.number   },   render:function() {     return <h1>{this.props.name} es level {this.props.level}</h1>   } }) ```",
+  "description": "project description",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify app.js  > build.js -t babelify"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,8 @@
   },
   "homepage": "https://github.com/ZoiloGranda/reactPlatzi#readme",
   "dependencies": {
+    "babelify": "6.1.2",
+    "browserify": "10.2.4",
     "react": "^0.13.3"
   }
 }
