@@ -85,3 +85,19 @@ class PokeTable extends React.Component{
   }
 }
 ```
+
+## onClick
+Para definir un evento de click se coloca de esta manera `onClick={this.onClick.bind(this)`, en el `render` del componente. El `bind(this)` es para que la funcion se ejecute con el contexto de `this` correcto y no con el `window`. 
+```js
+export default class PokeRow extends React.Component{
+  showName(ev){
+    console.log(this.props.name);
+  }
+  render() {
+    return <li className="pokerow" onClick={this.showName.bind(this)}>
+    <PokeAvatar number={this.props.number}/>
+    {this.props.name}
+    </li>
+  }
+}
+```
