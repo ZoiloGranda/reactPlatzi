@@ -1,12 +1,12 @@
 import React from 'react';
 import PokeRow from './PokeRow'
 
-export default class PokeTable extends React.Component{
+export default class PokeApp extends React.Component{
   growl(){
     
   }
   render(){
-    return <ul className="poketable">
+    return <ul className="PokeApp">
     {
       this.props.pokemons.map((pokemon)=>{
           return <PokeRow 

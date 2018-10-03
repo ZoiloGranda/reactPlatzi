@@ -1,5 +1,5 @@
 import React from 'react';
-import PokeTable from './components/PokeTable';
+import PokeApp from './components/PokeApp';
 
 var pokemons = [
   {number:1, name:'Bulbasaur'},
@@ -9,6 +9,6 @@ var pokemons = [
 
 
 React.render(
-  <PokeTable pokemons={pokemons} />,
+  <PokeApp pokemons={pokemons} />,
   document.getElementById('container')
 )
