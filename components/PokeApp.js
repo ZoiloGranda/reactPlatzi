@@ -2,20 +2,24 @@ import React from 'react';
 import PokeRow from './PokeRow'
 
 export default class PokeApp extends React.Component{
-  growl(){
-    
+  constructor(props) {
+    super(props);
+    this.state = {messages:[] }
+  }
+  onGrowl(name){
+    var text = `${name}, ${name}!`
+    var messages = this.state.messages.push({text:text})
+    this.setState({messages:messages})
   }
   render(){
-    return <ul className="PokeApp">
-    {
-      this.props.pokemons.map((pokemon)=>{
-          return <PokeRow 
-          key={pokemon.number} 
-          name={pokemon.name} 
-          number={pokemon.number}
-          growl={this.growl.bind(this)}/>
-      })
-    }
-    </ul>
+    var pokemons = [
+      {number:1, name:'Bulbasaur'},
+      {number:2, name:'Ivysaur'},
+      {number:3, name:'Venusaur'}
+    ]
+    
+    return <div className="PokeTable">
+    <PokeTable pokemons={pokemons}/>
+    <PokeChat messages={this.state.messages}/>
   }
 }
