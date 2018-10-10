@@ -13,3 +13,7 @@ export default class PokeChat extends React.Component {
     </ul>
   }
 }
+
+PokeChat.defaultProps = {
+  messages:[]
+} 

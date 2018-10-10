@@ -2,9 +2,6 @@ import React from 'react';
 import PokeRow from './PokeRow'
 
 export default class PokeTable extends React.Component{
-  growl(){
-    
-  }
   render(){
     return <ul className="poketable">
     {
@@ -13,7 +10,8 @@ export default class PokeTable extends React.Component{
           key={pokemon.number} 
           name={pokemon.name} 
           number={pokemon.number}
-          growl={this.growl.bind(this)}/>
+          //la funcion growl que se le pasa desde PokeApp
+          growl={this.props.onGrowl}/>
       })
     }
     </ul>

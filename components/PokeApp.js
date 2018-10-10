@@ -1,14 +1,17 @@
 import React from 'react';
-import PokeRow from './PokeRow'
+import PokeTable from './PokeTable'
+import PokeChat from './PokeChat'
 
 export default class PokeApp extends React.Component{
   constructor(props) {
     super(props);
-    this.state = {messages:[] }
+    this.state = {messages:[] },
+    this.onGrowl =  this.onGrowl.bind(this)
   }
   onGrowl(name){
-    var text = `${name}, ${name}!`
-    var messages = this.state.messages.push({text:text})
+    let text = `${name}, ${name}!`
+    this.state.messages.push({text:text});
+    let messages = this.state.messages;
     this.setState({messages:messages})
   }
   render(){
@@ -19,7 +22,8 @@ export default class PokeApp extends React.Component{
     ]
     
     return <div className="PokeTable">
-    <PokeTable pokemons={pokemons}/>
+    <PokeTable pokemons={pokemons} onGrowl={this.onGrowl}/>
     <PokeChat messages={this.state.messages}/>
+    </div>
   }
 }

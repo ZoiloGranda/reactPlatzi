@@ -3,7 +3,8 @@ import PokeAvatar from './PokeAvatar'
 
 export default class PokeRow extends React.Component{
   onClick(ev){
-    this.props.growl.call(this, this.props.name)
+    //al hacer click se corre esta funcion
+    this.props.growl.call(null, this.props.name)
   }
   render() {
     return <li className="pokerow" onClick={this.onClick.bind(this)}>
