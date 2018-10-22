@@ -23,7 +23,7 @@ export default class PokeApp extends React.Component{
       {number:3, name:'Venusaur'}
     ]
     
-    return <div className="PokeTable">
+    return <div className="pokeapp">
     <PokeTable pokemons={pokemons} onGrowl={this.onGrowl}/>
     <PokeChat messages={this.state.messages}/>
     </div>
