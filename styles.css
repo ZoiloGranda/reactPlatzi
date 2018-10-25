@@ -57,7 +57,21 @@ table {
   overflow: scroll;
 }
 .pokerow{
-  
+  background-color: lightblue;
+	border: 1px solid black;
+	width: 100%;
+	height: 80px;
+	line-height: 80px;
+}
+.avatar-container{
+	width: 120px;
+	display: inline-block;
+	text-align: center;
+}
+.avatar{
+	vertical-align: middle;
+	max-height:75px;
+	max-width: 100px
 }
 .pokechat{
   width: 70%;
