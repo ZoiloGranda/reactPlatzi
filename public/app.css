@@ -79,3 +79,12 @@ table {
   height: 100%;
   overflow: scroll;
 }
+
+.message-animation-enter{
+  opacity:0;
+  transition: opacity .5s ease-in;
+}
+
+.message-animation-enter.message-animation-enter-active{
+  opacity: 1; 
+}
