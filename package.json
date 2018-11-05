@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "browserify app.js  > build.js -t babelify"
+    "build": "browserify app.js  > public/app.js -t babelify",
+    "start": "babel-node index.js"
   },
   "repository": {
     "type": "git",
