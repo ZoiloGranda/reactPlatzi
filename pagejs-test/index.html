@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Page.js</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.11.3/page.min.js"></script>
+  </head>
+  <body>
+    <h1>Page.js router</h1>
+    <p></p>
+    <ul>
+      <li><a href="/">index</a></li>
+      <li><a href="#whoop">whoop</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/user">User</a></li>
+      <li><a href="/user/me">/user/me</a></li>
+      <li><a href="/not-found?foo=bar">/not-found</a></li>
+    </ul>
+    <script type="text/javascript">
+      //page('ruta', callback)
+      page('/',index);
+      page('/about', about);
+      page('/user', user);
+      page('/user/:userName', user);
+      page('*',notFound)
+      page();
+      
+      function index() {
+        document.querySelector('p').textContent='En el index';
+      }
+      
+      function about() {
+        document.querySelector('p').textContent='En el about';
+      }
+      
+      function user(ctx) {
+        document.querySelector('p').textContent=ctx.params.userName?'En el user '+ctx.params.userName:'En el user';
+      }
+      
+      function notFound() {
+        document.querySelector('p').textContent='En el notFound';
+      }
+    </script>
+  </body>
+</html>
